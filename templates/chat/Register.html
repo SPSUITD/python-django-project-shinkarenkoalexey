@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:input="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css'%}">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</head>
+<body class="class-black">
+{% load static %}
+
+<div class="register">
+    <form action="chat" align="center" method="post">
+        {% csrf_token %}
+        <h1 class="text-black">Create account</h1>
+        <div class="reg_item another">
+            <p class="text-black">E-mail </p>
+            <input type="email" name="mail" placeholder="Mail" class="reg_black" id="mail" required>
+        </div>
+        <div>
+            <div class="reg_item left">
+                <p class="text-black">Name </p>
+                <input type="text" name="name" placeholder="Name" class="reg_black" id="name" required>
+            </div>
+            <div class="reg_item right">
+                <p class="text-black">Surname </p>
+                <input type="text" name="surname" placeholder="Surname" class="reg_black" id="surname" required>
+
+            </div>
+        </div>
+
+        <div class="reg_item another">
+            <p class="text-black">Date of Birth </p>
+            <input type="date" name="date" class="reg_black" id="date" required>
+        </div>
+        <div class="reg_item another">
+            <p class="text-black">Password </p>
+            <input type="password" name="password" class="reg_black" placeholder="Password" id="password" required>
+        </div>
+        <div class="reg_item another">
+            <p class="text-black">Confirm password </p>
+            <input type="password" name="cpassword" class="reg_black" placeholder="Confirm password" id="cpassword" required>
+        </div>
+
+        <p><input type="submit" class="send" value="Create"></p>
+        <a href="/login" class="link_login_black" id="link">Already created?</a>
+    </form>
+</div>
+
+<input type="checkbox" id="theme" class="switch">
+
+<script>
+$(function () {
+  $("#theme").on('click', () => {
+  $('body').toggleClass('class-white')
+  $('p').toggleClass('text-white')
+  $('h1').toggleClass('text-white')
+  $('#link').toggleClass('link_login_white')
+  $('#mail').toggleClass('reg_white')
+  $('#surname').toggleClass('reg_white')
+  $('#name').toggleClass('reg_white')
+  $('#date').toggleClass('reg_white')
+  $('#password').toggleClass('reg_white')
+  $('#cpassword').toggleClass('reg_white')
+  })
+})
+</script>
+</body>
+</html>
