@@ -61,11 +61,6 @@ body {
   margin-right:0;
 }
 
-.time-right {
-  float: right;
-  color: white;
-}
-
 .time-left {
   float: left;
   color: white;
@@ -297,6 +292,41 @@ input[type=text], select {
          -webkit-border-radius:4px;
          -moz-border-radius:4px;
          border-radius: 4px;
+         font:13px Arial, Helvetica, sans-serif;
+         font-weight:bold;
+         color:#ffffff;
+         background:#667bc9;
+         -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+         -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+         box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+    }
+
+    .send_2{text-decoration:none; text-align:center;
+         position: fixed;
+         top: 20px;
+         right: 580px;
+         padding:11px 24px;
+         border:solid 1px #004F72;
+         -webkit-border-radius:4px;
+         -moz-border-radius:4px;
+         border-radius: 5px;
+         font:13px Arial, Helvetica, sans-serif;
+         font-weight:bold;
+         color:#ffffff;
+         background:#7288da;
+         -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+         -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 1px #ffffff;
+         box-shadow:0px 0px 2px #bababa, inset 0px 0px 1px #ffffff;
+
+    }.send_2:hover{
+         position: fixed;
+         top: 20px;
+         right: 580px; 
+         padding:11px 24px;
+         border:solid 1px #004F72;
+         -webkit-border-radius:4px;
+         -moz-border-radius:4px;
+         border-radius: 5px;
          font:13px Arial, Helvetica, sans-serif;
          font-weight:bold;
          color:#ffffff;
