@@ -7,16 +7,9 @@ from django.http import HttpResponse, JsonResponse
 
 
 def chat(request):
-  return render(request, 'chat.html')
+  context = Room.objects.all()
+  return render(request, 'chat.html', {'context': context})
 
-def room(request,room):
-  username = request.GET.get('username')
-  room_details = Room.objects.get(name=room)
-  return render(request, 'room.html',{
-    'username': username,
-    'room': room,
-    'room_details': room_details
-  })
 
 def checker(request):
   room = request.POST['room_name']
@@ -28,6 +21,16 @@ def checker(request):
     new_room = Room.objects.create(name=room)
     new_room.save()
     return redirect('/'+room+'/?username='+username)
+
+
+def room(request,room):
+  username = request.GET.get('username')
+  room_details = Room.objects.get(name=room)
+  return render(request, 'room.html',{
+    'username': username,
+    'room': room,
+    'room_details': room_details
+  })
 
 
 def send(request):

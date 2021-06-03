@@ -11,6 +11,7 @@
 <body class="class-black">
 {% load static %}
 
+
   
 <h1 class="text-black center" align="center">Chat4You</h1>
 
@@ -24,6 +25,11 @@
         <input type="text" name="username" id="username" width="100px" />
         <input type="submit" value="Enter">
     </form>
+    {% for name in context %}
+      <div class="blocks">
+        <span class="text-black">{{ name.name }}</span>
+      </div>
+    {% endfor %}
 </div>
 
 <input type="checkbox" id="theme" class="switch">
@@ -33,6 +39,7 @@ $(function () {
   $("#theme").on('click', () => {
   $('body').toggleClass('class-white')
   $('label').toggleClass('text-white')
+  $('span').toggleClass('text-white')
   $('h1').toggleClass('text-white')
   $('div').toggleClass('white')
   $('#link').toggleClass('link_login_white')
